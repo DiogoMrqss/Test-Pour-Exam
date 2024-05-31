@@ -3,7 +3,7 @@ public class test {
 
     public String nom;
     public static void main(String[] args) {
-        System.out.println("kirikouuuuu");
+        System.out.println("megane is the star");
 
 
     }
