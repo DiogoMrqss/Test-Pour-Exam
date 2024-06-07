@@ -64,8 +64,7 @@ public class ESIGPaques {
         }
         return liste;
     }
-<<<<<<< HEAD
-=======
+
     private static void afficherPoidsMoyens_Q2(ArrayList<Lapin> liste)
     {
         HashMap<String, Double> poidsTotal = new HashMap<>();
@@ -92,6 +91,6 @@ public class ESIGPaques {
             }
         }
     }
->>>>>>> a12082508fb42c2714b8bbd170d7f42b157b7056
+
 
 }
