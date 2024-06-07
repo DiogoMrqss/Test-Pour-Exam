@@ -13,6 +13,17 @@ public class Lapin {
         this.poids = poids;
     }
 
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Lapin{" +
+                "nom='" + nom + '\'' +
+                ", typeChocolat='" + typeChocolat + '\'' +
+                ", garni=" + garni +
+                ", position=" + position +
+                ", poids=" + poids +
+                '}';
+    }
+
     public String getNom() {
         return nom;
     }
