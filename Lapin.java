@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Lapin {
     private String nom;
     private String typeChocolat ;
@@ -5,12 +7,24 @@ public class Lapin {
     private Coord position;
     private double poids;
 
-    public Lapin(String nom, String typeChocolat, boolean garni, Coord position, double poids) {
+    public Lapin(String nom, String typeChocolat, boolean garni, int x, int y, double poids) {
         this.nom = nom;
         this.typeChocolat = typeChocolat;
         this.garni = garni;
-        this.position = position;
+        this.position = new Coord(x, y);
         this.poids = poids;
+    }
+
+    public Lapin(String ligne)
+    {
+        Scanner scLine = new Scanner(ligne);
+        nom = scLine.next();
+        typeChocolat = ESIGPaques.TAB_CAT_CHOC[scLine.nextInt() - 1];
+        garni = scLine.next().equals("oui");
+        int x = scLine.nextInt();
+        int y = scLine.nextInt();
+        position = new Coord(x, y);
+        poids = scLine.nextInt()/1000.0;
     }
 
     @java.lang.Override

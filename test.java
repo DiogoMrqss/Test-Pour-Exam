@@ -22,6 +22,6 @@ public class test {
         System.out.println("on va tous réussir l'ESIG" +
                 "     " + " eh ouais");
 
-        g
+
     }
 }
