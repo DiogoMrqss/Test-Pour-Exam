@@ -104,4 +104,15 @@ public class ESIGPaques {
 //        System.out.println(lapMax);
         return lapMax;
     }
+
+    private static Lapin lapinLePlusLourd_Q3aBis(ArrayList<Lapin> liste) {
+        Lapin lapMax = liste.get(0);
+        for (Lapin lap : liste) {
+            if (lap.getPoids() > lapMax.getPoids()) {
+                lapMax = lap;
+            }
+        }
+//        System.out.println(lapMax);
+        return lapMax;
+    }
 }
