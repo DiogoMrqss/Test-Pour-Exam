@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class ESIGPaques {
@@ -63,4 +64,31 @@ public class ESIGPaques {
         }
         return liste;
     }
+    private static void afficherPoidsMoyens_Q2(ArrayList<Lapin> liste)
+    {
+        HashMap<String, Double> poidsTotal = new HashMap<>();
+        HashMap<String, Integer> nbTypeChocolat = new HashMap<>();
+
+        for (int pos = 0; pos < TAB_CAT_CHOC.length; pos++) {
+            poidsTotal.put(TAB_CAT_CHOC[pos], 0.0);
+            nbTypeChocolat.put(TAB_CAT_CHOC[pos], 0);
+        }
+        for (Lapin lap: liste) {
+            String typeLap = lap.getTypeChocolat();
+            double poidsactu = poidsTotal.get(typeLap);
+            poidsactu += lap.getPoids();
+            poidsTotal.put(typeLap, poidsactu);
+            int nbTypeChoc = nbTypeChocolat.get(typeLap);
+            nbTypeChocolat.put(typeLap, nbTypeChoc+1);
+        }
+        for (String typeChocolate : poidsTotal.keySet()) {
+            if (nbTypeChocolat.get(typeChocolate) == 0){
+                System.out.println("Aucun chocolat de type " + typeChocolate);
+            }else {
+                double moyenne = poidsTotal.get(typeChocolate) / nbTypeChocolat.get(typeChocolate);
+                System.out.println("Moyenne des type " + typeChocolate + " " + moyenne*1000);
+            }
+        }
+    }
+
 }
