@@ -105,14 +105,9 @@ public class ESIGPaques {
         return lapMax;
     }
 
-    private static Lapin lapinLePlusLourd_Q3aBis(ArrayList<Lapin> liste) {
-        Lapin lapMax = liste.get(0);
-        for (Lapin lap : liste) {
-            if (lap.getPoids() > lapMax.getPoids()) {
-                lapMax = lap;
-            }
-        }
-//        System.out.println(lapMax);
-        return lapMax;
+    private static void afficherInfoPlusLourd_Q3b(Lapin lePlusLourd)
+    {
+        System.out.println("Le lapin le plus lourd pèse "+(lePlusLourd.getPoids() * 1000)+" grammes.");
+        System.out.println("Il s'appelle "+lePlusLourd.getNom()+" et vous le trouverez en position "+lePlusLourd.getPosition());
     }
 }
