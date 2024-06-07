@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lapin {
@@ -25,6 +26,23 @@ public class Lapin {
         int y = scLine.nextInt();
         position = new Coord(x, y);
         poids = scLine.nextInt()/1000.0;
+    }
+
+
+    public void afficherDistanceAvecLesAutres_Q4a(ArrayList<Lapin> liste)
+    {
+        for ( Lapin lap : liste )
+        {
+            if ( !nom.equals(lap.nom) ) //pas le même lapin
+                System.out.println(nom+" - "+lap.nom+" : "+distanceAvec(lap));
+        }
+    }
+
+
+    //NE PAS MODIFIER la fonction distanceAvec!!
+    public int distanceAvec(Lapin autreLapin)
+    {
+        return position.distanceAvec(autreLapin.position);
     }
 
     @java.lang.Override

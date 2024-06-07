@@ -110,4 +110,20 @@ public class ESIGPaques {
         System.out.println("Le lapin le plus lourd pèse "+(lePlusLourd.getPoids() * 1000)+" grammes.");
         System.out.println("Il s'appelle "+lePlusLourd.getNom()+" et vous le trouverez en position "+lePlusLourd.getPosition());
     }
+
+    private static void afficherToutesLesDistances_Q4b(ArrayList<Lapin> liste)
+    {
+        for ( Lapin lap : liste )
+        {
+            lap.afficherDistanceAvecLesAutres_Q4a(liste);
+        }
+        System.out.println("---------------------------------CE QUI N'ETAIT PAS DEMANDE----------------------");
+        for (int posLapin = 0; posLapin < liste.size()-1; posLapin++ )
+        {
+            for (int posAutreLapin = posLapin+1; posAutreLapin < liste.size(); posAutreLapin++)
+            {
+                System.out.println(liste.get(posLapin).getNom()+" - "+liste.get(posAutreLapin).getNom()+" : "+liste.get(posLapin).distanceAvec(liste.get(posAutreLapin)));
+            }
+        }
+    }
 }
