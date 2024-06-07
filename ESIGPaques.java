@@ -92,5 +92,16 @@ public class ESIGPaques {
         }
     }
 
-
+    private static Lapin lapinLePlusLourd_Q3a(ArrayList<Lapin> liste) {
+        double poidsMax = 0;
+        Lapin lapMax = null;
+        for (Lapin lap : liste) {
+            if (lap.getPoids() > poidsMax) {
+                poidsMax = lap.getPoids();
+                lapMax = lap;
+            }
+        }
+//        System.out.println(lapMax);
+        return lapMax;
+    }
 }
